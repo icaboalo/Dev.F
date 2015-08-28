@@ -1,0 +1,23 @@
+<resources>
+    <string name="app_name">Dev.F</string>
+
+    <string name="hello_world" translatable="false">Hello world!</string>
+    <string name="action_settings" translatable="false">Settings</string>
+    <string name="app_title">FRISKA</string>
+    <string name="username_hint">Username</string>
+    <string name="password_hint">Password</string>
+    <string name="forgot_password">I forgot password?</string>
+    <string name="login_button">Log In!</string>
+    <string name="register_button">Register</string>
+    <string name="username_input_error">Please enter a Username</string>
+    <string name="title_activity_register">RegisterActivity</string>
+    <string name="password_input_error">Please enter a Password</string>
+    <string name="first_name_hint">First Name</string>
+    <string name="last_name_hint">Last Name</string>
+    <string name="password_strength_weak">Weak</string>
+    <string name="password_strength_intermediate">Intermediate</string>
+    <string name="password_strength_strong">Strong</string>
+    <string name="password_strength_not_enough">Not Enough</string>
+    <string name="twitter_login_button">LogIn with Twitter!</string>
+    <string name="facebook_login_button">LogIn with Facebook</string>
+</resources>
