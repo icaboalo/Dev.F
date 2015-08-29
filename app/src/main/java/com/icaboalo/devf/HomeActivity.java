@@ -1,5 +1,7 @@
 package com.icaboalo.devf;
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
@@ -26,8 +28,8 @@ public class HomeActivity extends ActionBarActivity {
         mUsernameInput  = (EditText) findViewById(R.id.username_input);
         mPasswordInput  = (EditText) findViewById(R.id.password_input);
         mPasswordForgot = (TextView) findViewById(R.id.password_forgot);
-        mLogInButton    = (Button) findViewById(R.id.login_button);
-        mRegisterButton = (Button) findViewById(R.id.register_button);
+        mLogInButton    = (Button)   findViewById(R.id.login_button);
+        mRegisterButton = (Button)   findViewById(R.id.register_button);
 
         mLogInButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -37,6 +39,17 @@ public class HomeActivity extends ActionBarActivity {
                     mUsernameInput.setError(getResources().getString(R.string.username_input_error));
                     mPasswordInput.setError(getResources().getString(R.string.password_input_error));
                 } else Toast.makeText(HomeActivity.this, "Successful", Toast.LENGTH_SHORT).show();
+                AlertDialog.Builder alertDialog = new AlertDialog.Builder(HomeActivity.this);
+                alertDialog.setTitle("Congrats...")
+                        .setMessage("You've have successfully signed in")
+                        .setCancelable(false)
+                        .setPositiveButton("Ok", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {
+                                dialog.dismiss();
+                            }
+                        })
+                        .create().show();
 
             }
         });

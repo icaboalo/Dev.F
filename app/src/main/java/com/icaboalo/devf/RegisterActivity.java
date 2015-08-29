@@ -12,6 +12,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 
 public class RegisterActivity extends ActionBarActivity {
@@ -78,11 +79,12 @@ public class RegisterActivity extends ActionBarActivity {
                 String password = mPasswordInput.getText().toString();
                 String passwordRepetition = mPasswordConfirmationInput.getText().toString();
                 if (password.equals(passwordRepetition)){
-                    mPasswordRepetition.setText(getResources().getString(R.string.password_strength_weak));
+                    mPasswordRepetition.setText(getResources().getString(R.string.password_repetition_match));
                     mPasswordRepetition.setTextColor(getResources().getColor(R.color.green));
                 }else {
-                    mPasswordRepetition.setText(getResources().getString(R.string.password_strength_intermediate));
+                    mPasswordRepetition.setText(getResources().getString(R.string.password_repetition_not_match));
                     mPasswordRepetition.setTextColor(getResources().getColor(R.color.red));
+                    mPasswordRepetition.setTextSize(27);
                 }
             }
 
@@ -96,8 +98,14 @@ public class RegisterActivity extends ActionBarActivity {
             public void onClick(View v) {
                 if (mFirstNameInput.getText().toString().trim().length() > 4
                         && mLastNameInput.getText().toString().trim().length() > 4
-                        && mPasswordInput.getText().toString().trim().length() > 4){
-
+                        && mPasswordStrength.getText().toString().equals(getResources().getString(R.string.password_strength_intermediate))
+                        && mPasswordRepetition.getText().toString().equals(getResources().getString(R.string.password_repetition_match))){
+                    Toast.makeText(RegisterActivity.this, "Successful you are registered!", Toast.LENGTH_SHORT).show();
+                }else{
+                    mFirstNameInput.setError(getString(R.string.first_name_input_error));
+                    mLastNameInput.setError(getString(R.string.last_name_input_error));
+                    mPasswordInput.setError("Password must be at least 6 characters");
+                    mPasswordConfirmationInput.setError(getString(R.string.password_confirmation_input_error));
                 }
             }
         });

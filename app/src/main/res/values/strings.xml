@@ -20,4 +20,9 @@
     <string name="password_strength_not_enough">Not Enough</string>
     <string name="twitter_login_button">LogIn with Twitter!</string>
     <string name="facebook_login_button">LogIn with Facebook</string>
+    <string name="password_repetition_match">Match!</string>
+    <string name="password_repetition_not_match">Doesn\'t Match</string>
+    <string name="first_name_input_error">Please enter a Name</string>
+    <string name="last_name_input_error">Please enter a Lastname</string>
+    <string name="password_confirmation_input_error">Password doesn\'t match</string>
 </resources>
