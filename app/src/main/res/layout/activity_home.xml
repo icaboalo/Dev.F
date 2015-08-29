@@ -5,6 +5,7 @@
               android:gravity="center"
               android:orientation="vertical"
               android:padding="16dp"
+              android:background="@color/material_deep_teal_500"
               tools:context=".HomeActivity">
 
     <TextView
@@ -19,12 +20,14 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="90dp"
+        android:inputType="textPersonName"
         android:hint="@string/username_hint"/>
 
     <EditText
         android:id="@+id/password_input"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:inputType="textPassword"
         android:layout_marginTop="40dp"
         android:hint="@string/password_hint"/>
 
@@ -44,6 +47,7 @@
         <Button
             android:id="@+id/login_button"
             android:layout_width="0dp"
+
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="@string/login_button"/>

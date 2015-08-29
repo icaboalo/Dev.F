@@ -16,7 +16,7 @@ public class HomeActivity extends ActionBarActivity {
 
     EditText mUsernameInput, mPasswordInput;
     TextView mPasswordForgot;
-    Button   mLogInButton, mRegisterButton;
+    Button mLogInButton, mRegisterButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,12 +32,12 @@ public class HomeActivity extends ActionBarActivity {
         mLogInButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (mUsernameInput.getText().toString().trim().length() < 4) {
+                if (mUsernameInput.getText().toString().trim().length() < 4
+                        && mPasswordInput.getText().toString().trim().length() < 6) {
                     mUsernameInput.setError(getResources().getString(R.string.username_input_error));
-                } else Toast.makeText(HomeActivity.this, "Successful", Toast.LENGTH_SHORT).show();
-                if (mPasswordInput.getText().toString().trim().length() < 6) {
                     mPasswordInput.setError(getResources().getString(R.string.password_input_error));
                 } else Toast.makeText(HomeActivity.this, "Successful", Toast.LENGTH_SHORT).show();
+
             }
         });
 
