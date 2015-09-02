@@ -17,7 +17,7 @@ import android.widget.Toast;
 
 public class RegisterActivity extends ActionBarActivity {
     Toolbar  mToolbar;
-    EditText mFirstNameInput, mLastNameInput, mPasswordInput, mPasswordConfirmationInput;
+    EditText mFirstNameInput, mLastNameInput,mUsernameInput, mPasswordInput, mPasswordConfirmationInput;
     TextView mPasswordStrength, mPasswordRepetition;
     Button mRegisterButton;
 
@@ -32,6 +32,7 @@ public class RegisterActivity extends ActionBarActivity {
 
         mFirstNameInput = (EditText) findViewById(R.id.first_name_input);
         mLastNameInput  = (EditText) findViewById(R.id.last_name_input);
+        mUsernameInput  = (EditText) findViewById(R.id.username_input);
         mPasswordInput  = (EditText) findViewById(R.id.password_input);
         mPasswordConfirmationInput = (EditText) findViewById(R.id.password_input_confirmation);
 
@@ -98,12 +99,14 @@ public class RegisterActivity extends ActionBarActivity {
             public void onClick(View v) {
                 if (mFirstNameInput.getText().toString().trim().length() > 4
                         && mLastNameInput.getText().toString().trim().length() > 4
+                        && mUsernameInput.getText().toString().trim().length() > 4
                         && mPasswordStrength.getText().toString().equals(getResources().getString(R.string.password_strength_intermediate))
                         && mPasswordRepetition.getText().toString().equals(getResources().getString(R.string.password_repetition_match))){
                     Toast.makeText(RegisterActivity.this, "Successful you are registered!", Toast.LENGTH_SHORT).show();
                 }else{
                     mFirstNameInput.setError(getString(R.string.first_name_input_error));
                     mLastNameInput.setError(getString(R.string.last_name_input_error));
+                    mUsernameInput.setError(getString(R.string.username_input_error));
                     mPasswordInput.setError("Password must be at least 6 characters");
                     mPasswordConfirmationInput.setError(getString(R.string.password_confirmation_input_error));
                 }

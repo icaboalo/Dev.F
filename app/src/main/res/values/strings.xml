@@ -3,7 +3,9 @@
 
     <string name="hello_world" translatable="false">Hello world!</string>
     <string name="action_settings" translatable="false">Settings</string>
+
     <string name="app_title">FRISKA</string>
+    <string name="friska">Friska Log In</string>
     <string name="username_hint">Username</string>
     <string name="password_hint">Password</string>
     <string name="forgot_password">I forgot password?</string>
@@ -25,4 +27,32 @@
     <string name="first_name_input_error">Please enter a Name</string>
     <string name="last_name_input_error">Please enter a Lastname</string>
     <string name="password_confirmation_input_error">Password doesn\'t match</string>
+    <string name="title_activity_main">MainActivity</string>
+    <string name="what_song">WhatSong</string>
+    <string name="log_in">Log In</string>
+    <string name="title_activity_what_song">WhatSong</string>
+    <string name="what_song_input">Name your shortcut</string>
+
+
+    <string-array name="music_providers">
+        <item>Choose your music provider</item>
+        <item>Spotify</item>
+        <item>Rdio</item>
+        <item>Pandora</item>
+        <item>Google Play Music</item>
+        <item>Apple Music</item>
+        <item>Songza</item>
+        <item>Grooveshark</item>
+        <item>Last.fm</item>
+        <item>MOG</item>
+        <item>Rhapsody</item>
+        <item>Slacker Radio</item>
+        <item>SoundCloud</item>
+    </string-array>
+    <string name="title_activity_log_in">LogIn</string>
+    <string name="login_info">Access and visualize your information</string>
+    <string name="commercial_establishment">N° of Commercial Establishment</string>
+    <string name="enter_button">Enter</string>
+    <string name="need_password">Need password</string>
+    <string name="need_username">Need username</string>
 </resources>

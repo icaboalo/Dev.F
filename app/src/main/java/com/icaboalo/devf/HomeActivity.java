@@ -34,23 +34,24 @@ public class HomeActivity extends ActionBarActivity {
         mLogInButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (mUsernameInput.getText().toString().trim().length() < 4
-                        && mPasswordInput.getText().toString().trim().length() < 6) {
+                if (mUsernameInput.getText().toString().trim().length() > 4
+                        && mPasswordInput.getText().toString().trim().length() > 6) {
                     mUsernameInput.setError(getResources().getString(R.string.username_input_error));
                     mPasswordInput.setError(getResources().getString(R.string.password_input_error));
-                } else Toast.makeText(HomeActivity.this, "Successful", Toast.LENGTH_SHORT).show();
-                AlertDialog.Builder alertDialog = new AlertDialog.Builder(HomeActivity.this);
-                alertDialog.setTitle("Congrats...")
-                        .setMessage("You've have successfully signed in")
-                        .setCancelable(false)
-                        .setPositiveButton("Ok", new DialogInterface.OnClickListener() {
-                            @Override
-                            public void onClick(DialogInterface dialog, int which) {
-                                dialog.dismiss();
-                            }
-                        })
-                        .create().show();
-
+                } else{
+                    Toast.makeText(HomeActivity.this, "Successful", Toast.LENGTH_SHORT).show();
+                    AlertDialog.Builder alertDialog = new AlertDialog.Builder(HomeActivity.this);
+                    alertDialog.setTitle("Congrats...")
+                            .setMessage("You've have successfully signed in")
+                            .setCancelable(false)
+                            .setPositiveButton("Ok", new DialogInterface.OnClickListener() {
+                                @Override
+                                public void onClick(DialogInterface dialog, int which) {
+                                    dialog.dismiss();
+                                }
+                            })
+                            .create().show();
+                }
             }
         });
 
